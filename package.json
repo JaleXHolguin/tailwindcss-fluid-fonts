@@ -1,0 +1,53 @@
+{
+  "type": "module",
+  "name": "tailwindcss-fluid-fonts",
+  "version": "0.1.0",
+  "description": "The TailwindCSS Fluid Fonts plugin offers a solution for managing fluid font sizes in your project. With an easy-to-use setup this plugin perfectly suits your responsive design needs.",
+  "private": false,
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "test": "vitest",
+    "test:precommit": "vitest --watch=false",
+    "prepare": "husky install",
+    "release-notes": "node ./scripts/release-notes.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaleXHolguin/tailwindcss-fluid-fonts.git"
+  },
+  "keywords": [
+    "tailwindcss",
+    "fluid-font-size",
+    "responsive",
+    "plugin",
+    "layout",
+    "utilities"
+  ],
+  "author": "Jonathan Holguin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JaleXHolguin/tailwindcss-fluid-fonts/issues"
+  },
+  "homepage": "https://github.com/JaleXHolguin/tailwindcss-fluid-fonts#readme",
+  "devDependencies": {
+    "@types/lodash.merge": "4.6.9",
+    "@typescript-eslint/eslint-plugin": "6.17.0",
+    "@typescript-eslint/parser": "6.17.0",
+    "eslint": "8.56.0",
+    "husky": "8.0.3",
+    "lodash.merge": "4.6.2",
+    "prettier": "3.1.1",
+    "tailwindcss": "3.4.0",
+    "typescript": "5.3.3",
+    "unbuild": "2.0.0",
+    "vitest": "1.1.1"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  }
+}
