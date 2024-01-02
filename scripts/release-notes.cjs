@@ -1,11 +1,11 @@
 let path = require("path");
 let fs = require("fs");
 
-let version = process.env.TAG_NAME || "0.1.0";
+let version = process.env.TAG_NAME || "v0.1.0";
 
 let changelog = fs.readFileSync(path.resolve(__dirname, "..", "CHANGELOG.md"), "utf8");
 let match = new RegExp(
-  `## \\[${version}\\] - (.*)\\n\\n([\\s\\S]*?)\\n(?:(?:##\\s)|(?:\\[))`,
+  `## \\[${version.replace(/^v/, '')}\\] - (.*)\\n\\n([\\s\\S]*?)\\n(?:(?:##\\s)|(?:\\[))`,
   "g",
 ).exec(changelog);
 
