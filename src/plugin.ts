@@ -24,7 +24,10 @@ export const fluidFonts = plugin.withOptions(
       const minViewport = normalizeUnit(minVw, unit);
       const maxViewport = normalizeUnit(maxVw, unit);
 
-      return `clamp(${minFontSize}rem, calc(${minFontSize}rem + (${maxFontSize} - ${minFontSize}) * ((100vw - ${minViewport}rem) / (${maxViewport} - ${minViewport}))), ${maxFontSize}rem)`;
+      /** The calc base value MUST be stated in REM to maintain accessibility  */
+      const baseValue = normalizeUnit(min, "rem");
+
+      return `clamp(${minFontSize}${unit}, calc(${baseValue}rem + (${maxFontSize} - ${minFontSize}) * ((100vw - ${minViewport}${unit}) / (${maxViewport} - ${minViewport}))), ${maxFontSize}${unit})`;
     };
 
     for (const size in fontSizes) {
